@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 80%;
+            height:400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+        }
+        #image1{
+            height: 100%;
+            width: 100%;
+        }
+        #image2{
+            height: 100%;
+            width: 100%;
+        }
+        #image3{
+            height: 100%;
+            width: 100%;
+        }
+        #img1{
+            grid-row: 1/span 2;
+            height: 400px;
+        }
+        #img2{
+            height: 200px;
+        }
+        #img3{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <center><div class="container">
+       <div id="img1"> <img src="3.jpg" id="image1">
+    </div>
+    <div id="img2">
+        <img src="5.jpg" id="image2">
+    </div>
+    <div id="img3">
+        <img src="7.jpg" id="image3">
+    </div>
+</div>
+
+</center>
+</body>
+</html>

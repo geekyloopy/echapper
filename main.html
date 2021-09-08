@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>echapper|My Travelling Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        function hiddenLoginContainer(){
+            document.getElementById("hiddenLoginCont").style.display="flex";
+
+
+        };
+        function validation()
+	{
+        document.getElementById("hiddenLoginCont").style.display="flex";
+		var juname=loginInfo.uname.value;
+		var jpass=loginInfo.pass.value;
+		if(juname=="")
+			{
+				document.getElementById("unamemsg").innerHTML="** Please fill the username field ";
+				return false;
+			}
+		if((juname.length<=4)||(juname.length>20))
+			{
+				document.getElementById("unamemsg").innerHTML="** The username must be between 5 and 20 characters long ";
+				return false;	
+			}
+		if(jpass=="")
+			{
+				document.getElementById("passmsg").innerHTML="** Please fill the password field ";
+				return false;
+			}
+		if((jpass.length<=4)||(jpass.length>15))
+			{
+				document.getElementById("passmsg").innerHTML="** The password must be between 5 and 15 cahracters long ";
+				return false;
+			}
+		else
+		return true; 
+	};
+    </script>
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo">
+           <a href="#" name="home"> <p>échapper</p></a>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="menuItem" id="menu-1"><a href="#home"><p>Home</p></a></li>
+                    <li class="menuItem" id="menu-2"><a href="#featured"><p>Featured</p></a></li>
+                    <li class="menuItem" id="menu-3"><a href="#latest"><p>Latest</p></a></li>
+                    <li class="menuItem" id="menu-4"><a href="#contactUs"><p>Contact Us</p></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="loginContainer">
+       <a onclick="hiddenLoginContainer()"><p id="LOGIN">LOGIN</p></a> <p id="doubleDash">||</p><a href="signup.html"><p id="SIGNUP">SIGNUP</p></a>
+    </div>
+
+
+
+<!-- LOGIN CONTAINER -->
+<div class="loginContainerHidden" id="hiddenLoginCont">
+    <form name="loginInfo"><label><p>Username:</p></label><input type="text" name="uname" id="username">
+        <span id="unamemsg"></span><br>
+    <label><p> Password:</p></label><input type="text" name="pass" id="password">
+    <span id="passmsg"></span><br>
+    <button id="loginButton" onclick="loginValidator()"><p id="loginBtn">Login</p></button></form>
+</div>
+
+<!-- MAIN CONTAINER -->
+
+<div class="mainContainer">
+
+    <section id="home">
+        <p id="mainHeading">---Let's escape the World---</p>
+        <p id="subHeading">We travel not to escape life but for life not to escape us.</p>
+    </section>
+    <!-- <center><hr class="type_5"></center> -->
+    <center>
+        <div class="container1" id="category">
+           <a href="adventure.html"><div class="categoryBox" id="categoryBox-1">ADVENTURE</div></a>
+            <a href="city.html"><div class="categoryBox" id="categoryBox-2">CITY</div></a>
+            <a href="relaxing.html"><div class="categoryBox" id="categoryBox-3">RELAXING</div></a>
+        </div>
+    </section>
+   
+    <!-- CONTAINER 2 STARTS FROM HERE -->
+
+
+    <div id="latestPost"><h1>Latest Post</h1></div><a name="latest"></a>
+    <div class="container2">
+        <div class="container2Item" id="container2Item-1"><a href="varanasi.html" target="_target"><img src="css/varanasi600x600.jpg" id="container2Image1" class="containerImage"></a></div>
+        <div class="container2Item" id="container2Item-2"><a href="scuba.html" target="_target"><img src="css/scuba300x300.jpg" id="container2Image2" class="containerImage"></a></div>
+        <div class="container2Item" id="container2Item-3"><a href="bagan.html" target="_target"><img src="css/bagan300x300.jpg" id="container2Image3" class="containerImage"></a></div>
+        <div class="container2Item" id="container2Item-4"><a href="langkawi.html" target="_target"><img src="css/langkawi300x300.jpg" id="container2Image4" class="containerImage"></a></div>
+        <div class="container2Item" id="container2Item-5"><a href="salzburg.html" target="_target"><img src="css/salzburg300x300.jpg" id="container2Image5" class="containerImage"></a></div>
+    </div>
+
+
+<!-- CONTAINER 3 STARTS FROM HERE -->
+
+
+    <div id="featuredPost"><h1>Featured Post</h1></div><a name="featured"></a>
+    <div class="container3">
+        <div class="container3Item" id="container3Item-1"><a href="maldives.html" target="_target"><img src="css/maldives600x600.jpg" id="container3Image1" class="containerImage"></a></div>
+        <div class="container3Item" id="container3Item-2"><a href="bungee.html" target="_target"><img src="css/bungee300x300.jpg" id="container3Image2" class="containerImage"></a></div>
+        <div class="container3Item" id="container3Item-3"><a href="denver.html" target="_target"><img src="css/denver300x300.jpg" id="container3Image3" class="containerImage"></a></div>
+        <div class="container3Item" id="container3Item-4"><a href="skydiving.html" target="_target"><img src="css/skydiving300x300.jpg" id="container3Image4" class="containerImage"></a></div>
+        <div class="container3Item" id="container3Item-5"><a href="lasvegas.html" target="_target"><img src="css/lasvegas300x300.jpg" id="container3Image5" class="containerImage"></a></div>
+    </div>
+
+
+    <!-- CONTAINER 4 STARTS FROMHERE -->
+    
+    <div class="container4">
+            <h1>Our Travelling Partners</h1>
+            <p>Our bloggers get discounts upto 40% upon booking with our partners.</p>
+<div class="ourPartner">
+    <div class="partner" ><img src="css/mmt300x80.jpg" id="partner1" class="partnerImage"></div>
+    <div class="partner" ><img src="css/tripadvisor300x80.jpg" id="partner2" class="partnerImage"></div>
+    <div class="partner" ><img src="css/trivago300x80.jpg" id="partner3" class="partnerImage"></div>
+</div>
+    </div>
+    
+    <!-- CONTAINER 5 STARTS FROM HERE -->
+
+    <div class="container5">
+            <h1>Follow us for more updates</h1>
+<div class="socialNetworking">
+    <div class="follow" ><img src="css/fb80x80.jpg" id="follow1" class="followImage"></div>
+    <div class="follow" ><img src="css/insta80x80.jpg" id="follow2" class="followImage"></div>
+    <div class="follow" ><img src="css/pinterest80x80.jpg" id="follow3" class="followImage"></div>
+    <div class="follow" ><img src="css/twitter80x80.jpg" id="follow3" class="followImage"></div>
+</div>
+    </div>
+    
+
+    <!-- FOOTER STARTS FROM HERE -->
+
+
+    <footer id="footerSection">
+        <div id="contactUs">
+            <center> <p>Contact Us</p> <a name="contactUs"> </a>
+                <input type="text" class="textBox" id="Box1" placeholder="Full Name"><br>
+                <input type="text" class="textBox" id="Box1" placeholder="Your Age"><br>
+                <input type="text" class="textBox" id="Box1" placeholder="Mobile No."><br>
+                <input type="text" class="textBox" id="Box1" placeholder="Email Id"><br>
+                <!-- <input type="button" class="btn" value="SUBMIT"> -->
+                <button id="submitButton"><p>SUBMIT</p></button>
+            </center>
+        </div>
+        <div id="about">
+           <center><p>About Me</p><a name="about"></a>
+            <div class="aboutImageContainer">
+            <img src="css/about.jpg" id="aboutImg">
+            </div>
+            <p>Shivam Sharma</p>
+            <p>B.tech NIT Kurukshetra(2023) with IT</p>
+            <p>Loves Living Life</p>
+            </center>
+            &copy Copyright 2020
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

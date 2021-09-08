@@ -1,0 +1,142 @@
+<html>
+<head>
+	<script type="text/javascript">
+	function validation()
+	{
+		let jfname=myForm.fname.value;
+		let juname=myForm.uname.value;
+		let jpass=myForm.pass.value;
+		let jconpass=myForm.conpass.value;
+		let jemailid=myForm.emailid.value;
+		let jage=myForm.age.value;
+		
+		if(jfname=="")
+			{
+				document.getElementById("fnamemsg").innerHTML="** Please fill the name field ";
+				return false;
+			}
+
+		if(juname=="")
+			{
+				document.getElementById("unamemsg").innerHTML="** Please fill the username field ";
+				return false;
+			}
+		if((juname.length<=4)||(juname.length>20))
+			{
+				document.getElementById("unamemsg").innerHTML="** The username must be between 5 and 20 characters long ";
+				return false;	
+			}
+		if(jpass=="")
+			{
+				document.getElementById("passmsg").innerHTML="** Please fill the password field ";
+				return false;
+			}
+		if((jpass.length<=4)||(jpass.length>15))
+			{
+				document.getElementById("passmsg").innerHTML="** The password must be between 5 and 15 cahracters long ";
+				return false;
+			}
+		if(jconpass!=jpass)
+			{
+				document.getElementById("conpassmsg").innerHTML="** The passwords don't match ";
+				return false;
+			}
+		if(jemailid=="")
+			{
+				document.getElementById("emailidmsg").innerHTML="** Please fill the Email-Id field ";
+				return false;
+			}
+		if(jemailid.indexOf('@')<=0)
+			{
+				document.getElementById("emailidmsg").innerHTML="** @ can't come at first place ";
+				return false;
+			}
+		if((jemailid.charAt(jemailid.length-4)!='.')&&(jemailid.charAt(jemailid.length-3)!='.'))
+			{
+				document.getElementById("emailidmsg").innerHTML="** Invalid Email-Id ";
+				return false;
+			}
+		if(jage=="")
+			{
+				document.getElementById("agemsg").innerHTML="** Please fill the age field ";
+				return false;
+			}
+		if(isNaN(jage))
+			{
+				document.getElementById("agemsg").innerHTML="** The Age should be a number ";
+				return false;
+			}
+		if((jage>100)||(jage<18))
+			{
+				document.getElementById("agemsg").innerHTML="** The Age should be between 18 and 100 ";
+				return false;
+			}
+		else
+		return true; 
+	};
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<style>
+	p{
+		font-size: 1.2rem;
+		font-family: 'Varela Round';
+		margin: 20px 8px;
+    padding: 3px 3px;
+
+	}
+	h1{
+		color: rgb(68, 68, 68);
+		font-family: 'Varela Round';
+		margin: 28px auto;
+	}
+	label{
+		display: inline-block;
+	}
+	span{
+		display:block;
+		font-family: 'Ubuntu';
+	}
+	.btn{
+		padding: 11px 25px;
+    margin: 5px 31px;
+}
+</style>
+</head>
+<body>
+<center><h1 id="signUp">SIGNUP</h1>
+	<hr>
+		<form onsubmit="return validation()" name="myForm">
+
+
+				<label><p>Full Name :</p></label>
+				<input type="text" id="fname" name="fname">
+				<span id="fnamemsg"></span>
+
+				<label><p>Username: </p></label>
+				<input type="text" id="uname" name="uname">
+				<span id="unamemsg"></span>
+				
+				<label><p>Password: </p></label>
+				<input type="text" name="pass" id="pass">
+				<span id="passmsg"></span>
+
+				<label><p>Re-enter Password: </p></label>
+				<input type="text" name="conpass" id="conpass">
+				<span id="conpassmsg"></span>
+
+				<label><p>Email-Id: </p></label>
+				<input type="text" name="emailid" id="emailid">
+				<span id="emailidmsg"></span>
+
+				<label><p>Enter Your Age: </p></label>
+				<input type="text" name="age" id="dob">
+				<span id="agemsg"></span>
+
+				<input type="submit" value="SIGNUP" class="btn">
+				<input type="reset" class="btn">
+		</form>
+</center>
+
+</body>
+</html>

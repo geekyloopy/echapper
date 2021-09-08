@@ -1,0 +1,79 @@
+<html>
+<head>
+	<script type="text/javascript">
+	function validation()
+	{
+		var juname=myForm.uname.value;
+		var jpass=myForm.pass.value;
+		if(juname=="")
+			{
+				document.getElementById("unamemsg").innerHTML="** Please fill the username field ";
+				return false;
+			}
+		if((juname.length<=4)||(juname.length>20))
+			{
+				document.getElementById("unamemsg").innerHTML="** The username must be between 5 and 20 characters long ";
+				return false;	
+			}
+		if(jpass=="")
+			{
+				document.getElementById("passmsg").innerHTML="** Please fill the password field ";
+				return false;
+			}
+		if((jpass.length<=4)||(jpass.length>15))
+			{
+				document.getElementById("passmsg").innerHTML="** The password must be between 5 and 15 cahracters long ";
+				return false;
+			}
+		else
+		return true; 
+	};
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<style>
+	p{
+		font-size: 1.2rem;
+		font-family: 'Varela Round';
+		margin: 20px 8px;
+    padding: 3px 3px;
+
+	}
+	h1{
+		color: rgb(68, 68, 68);
+		font-family: 'Varela Round';
+		margin: 28px auto;
+	}
+	label{
+		display: inline-block;
+	}
+	span{
+		display:block;
+		font-family: 'Ubuntu';
+	}
+	.btn{
+		padding: 11px 25px;
+    margin: 5px 31px;
+}
+</style>
+</head>
+<body>
+<center><h1 id="signUp">LOGIN</h1>
+	<hr>
+		<form onsubmit="return validation()" name="myForm">
+
+				<label><p>Username: </p></label>
+				<input type="text" id="uname" name="uname">
+				<span id="unamemsg"></span>
+				
+				<label><p>Password: </p></label>
+				<input type="text" name="pass" id="pass">
+				<span id="passmsg"></span>
+
+				<input type="submit" value="LOGIN" class="btn">
+				<input type="reset" class="btn">
+		</form>
+</center>
+
+</body>
+</html>
